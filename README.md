@@ -1,47 +1,34 @@
 # Medical Data Visualizer
 
-In this project, you will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas. The dataset values were collected during medical examinations.
+# Sea Level Predictor
 
-#### Data description
+A Python script that visualizes statistics for a given set of medical data
 
-The rows in the dataset represent patiets and the columns represent information like body measurements, results from various blood tests, and lifestyle choices. You will use the dataset to exploring the relationship between cardiac disease, body measurements, blood markers, and lifestyle choices.
+![Med Visualizer Screenshot](https://github.com/bstefansen/medical-data-visualizer/blob/master/catplot.png?raw=true)
 
-File name: medical_examination.csv
+## Why
+I built this project to better understand Python's data science packages and utilize different modules like NumPy, Pandas, and Matplotlib.
 
-| Feature | Variable Type | Variable      | Value Type |
-|:-------:|:------------:|:-------------:|:----------:|
-| Age | Objective Feature | age | int (days) |
-| Height | Objective Feature | height | int (cm) |
-| Weight | Objective Feature | weight | float (kg) |
-| Gender | Objective Feature | gender | categorical code |
-| Systolic blood pressure | Examination Feature | ap_hi | int |
-| Diastolic blood pressure | Examination Feature | ap_lo | int |
-| Cholesterol | Examination Feature | cholesterol | 1: normal, 2: above normal, 3: well above normal |
-| Glucose | Examination Feature | gluc | 1: normal, 2: above normal, 3: well above normal |
-| Smoking | Subjective Feature | smoke | binary |
-| Alcohol intake | Subjective Feature | alco | binary |
-| Physical activity | Subjective Feature | active | binary |
-| Presence or absence of cardiovascular disease | Target Variable | cardio | binary |
+## Features
+- Users can calculate data plots after running the program
+- Users can predict correlations between conditions and patient data
 
-#### Tasks
+## Installation
+- Download Python
+- Clone the repository into a local folder on your computer
+- Open a Bash terminal inside your local folder
+- Import the necessary packages by running these commands
+  - `python`
+  - `import pandas, numpy, matplotlib, seaborn`
+  - `exit()` 
+- Start the main.py script by running this command
+  - `python main.py`
 
-Create a chart similar to `examples/Figure_1.png`, where we show the counts of good and bad outcomes for cholesterol, gluc, alco variable, active, and smoke for patients with cardio=1 and cardio=0 in different panels.
+## Development
 
-Use the data to complete the following tasks in `medical_data_visualizer.py`:
-* Add an 'overweight' column to the data. To determine if a person is overweight, first calculate their BMI by dividing their weight in kilograms by the square of their height in meters. If that value is > 25 then the person is overweight. Use the value 0 for NOT overweight and the value 1 for overweight.
-* Normalize data by making 0 always good and 1 always bad. If the value of 'cholestorol' or 'gluc' is 1, make the value 0. If the value is more than 1, make the value 1.
-* Convert the data into long format and create a chart that shows the value counts of the categorical features using seaborn's `catplot()`. The dataset should be split by 'Cardio' so there is one chart for each 'cardio' value. The chart should look like "examples/Figure_1.png".
-* Clean the data. Filter out the following patient segments that represent incorrect data:
-  - diastolic pressure is higher then systolic (Keep the correct data with `df['ap_lo'] <= df['ap_hi'])`)
-  - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
-  - height is more than the 97.5th percentile
-  - weight is less then the 2.5th percentile
-  - weight is more than the 97.5th percentile
-* Create a correlation matrix using the dataset. Plot the correlation matrix using seaborn's `heatmap()`. Mask the upper triangle. The chart should look like "examples/Figure_2.png".
+For development, you can use `main.py` to test your functions. The calculations rest in `medical_data_visualizer.py`
 
-Any time a variable is set to 'None', make sure to set it to the correct code.
+## License
+This project is licensed under the MIT License
 
-### Development
-
-For development, you can use `main.py` to test your functions. Click the "run" button and `main.py` will run.
 
