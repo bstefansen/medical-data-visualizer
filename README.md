@@ -1,7 +1,4 @@
 # Medical Data Visualizer
-
-# Sea Level Predictor
-
 A Python script that visualizes statistics for a given set of medical data
 
 ![Med Visualizer Screenshot](https://github.com/bstefansen/medical-data-visualizer/blob/master/catplot.png?raw=true)
